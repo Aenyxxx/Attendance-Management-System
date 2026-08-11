@@ -149,22 +149,48 @@
                     </div>
                 </article>
 
-                <article class="summary-card">
+                <article class="summary-card goals-card">
+
                     <div class="card-top">
-                        <span>Savings Goal</span>
-                        <span class="card-icon">🎯</span>
+                        <span>Financial Goals</span>
+
+                        <button class="add-goal-btn" type="button">
+                            + Add Goal
+                        </button>
                     </div>
 
-                    <h3>$8,000 <small>/ $10,000</small></h3>
+                    <!-- Goal Dropdown -->
+                    <div class="goal-selector">
+                        <label for="goal-select">Current Goal</label>
 
-                    <div class="progress">
-                        <div class="progress-bar" style="width: 80%;"></div>
+                        <select id="goal-select">
+                            <option>📱 IPHONE</option>
+                            <option>✈️ Travel Fund</option>
+                            <option>🚗 Car Fund</option>
+                            <option>💻 New Laptop</option>
+                            <option>🎓 Education</option>
+                        </select>
                     </div>
 
-                    <div class="progress-label">
-                        <span>80% completed</span>
-                        <span>$2,000 left</span>
+                    <!-- Selected Goal -->
+                    <div class="selected-goal">
+
+                        <div class="goal-amount">
+                            <h3>$8,000 <small>/ $10,000</small></h3>
+                            <span class="goal-percentage">10%</span>
+                        </div>
+
+                        <div class="goal-progress">
+                            <div class="goal-progress-bar" style="width: 10%;"></div>
+                        </div>
+
+                        <div class="goal-footer">
+                            <span>10% completed</span>
+                            <span>$2,000 left</span>
+                        </div>
+
                     </div>
+
                 </article>
 
             </div>
