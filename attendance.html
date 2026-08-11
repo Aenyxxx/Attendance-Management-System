@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance | BeigePay</title>
+    <link rel="stylesheet" href="attendance.css">
+</head>
+<body>
+
+<div class="app-layout">
+
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">B</div>
+            <div>
+                <h2>BeigePay</h2>
+                <span>Personal Finance</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <p class="nav-label">MAIN MENU</p>
+
+            <a href="dashboard.html" class="nav-link">
+                <span>📊</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="attendance.html" class="nav-link active">
+                <span>📅</span>
+                <span>Attendance</span>
+            </a>
+
+            <a href="profile.html" class="nav-link">
+                <span>👤</span>
+                <span>Profile</span>
+            </a>
+
+            <a href="settings.html" class="nav-link">
+                <span>⚙️</span>
+                <span>Settings</span>
+            </a>
+
+            <a href="files.html" class="nav-link">
+                <span>📁</span>
+                <span>Files</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-user">
+            <div class="user-avatar">JD</div>
+            <div class="user-info">
+                <strong>Jane Doe</strong>
+                <span>Administrator</span>
+            </div>
+            <span>•••</span>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="top-header">
+            <div class="page-title">
+                <div>
+                    <h1>Attendance</h1>
+                    <p>Track your attendance records.</p>
+                </div>
+            </div>
+
+            <div class="header-actions">
+                <div class="search-box">
+                    <span>⌕</span>
+                    <input type="search" placeholder="Search anything...">
+                </div>
+
+                <button class="notification-btn">🔔</button>
+                <div class="header-avatar">JD</div>
+            </div>
+        </header>
+
+        <section class="content">
+
+            <div class="page-heading">
+                <div>
+                    <h2>Attendance Overview</h2>
+                    <p>Your attendance summary for August 2026.</p>
+                </div>
+
+                <button class="month-btn">August 2026 ▾</button>
+            </div>
+
+            <div class="attendance-cards">
+
+                <div class="attendance-card">
+                    <div class="attendance-icon present">✓</div>
+                    <div>
+                        <span>Present Days</span>
+                        <strong>18</strong>
+                    </div>
+                    <small>+2 this month</small>
+                </div>
+
+                <div class="attendance-card">
+                    <div class="attendance-icon absent">×</div>
+                    <div>
+                        <span>Absent Days</span>
+                        <strong>2</strong>
+                    </div>
+                    <small>1 approved</small>
+                </div>
+
+                <div class="attendance-card">
+                    <div class="attendance-icon late">◷</div>
+                    <div>
+                        <span>Late Days</span>
+                        <strong>3</strong>
+                    </div>
+                    <small>15 minutes avg.</small>
+                </div>
+
+                <div class="attendance-card rate-card">
+                    <div class="attendance-icon rate">%</div>
+                    <div>
+                        <span>Attendance Rate</span>
+                        <strong>90%</strong>
+                    </div>
+                    <small>Excellent</small>
+                </div>
+
+            </div>
+
+            <div class="attendance-layout">
+
+                <section class="calendar-card">
+                    <div class="section-heading">
+                        <div>
+                            <h2>August 2026</h2>
+                            <p>Monthly attendance calendar</p>
+                        </div>
+
+                        <div class="calendar-controls">
+                            <button>‹</button>
+                            <button>›</button>
+                        </div>
+                    </div>
+
+                    <div class="calendar">
+
+                        <div class="weekday">SUN</div>
+                        <div class="weekday">MON</div>
+                        <div class="weekday">TUE</div>
+                        <div class="weekday">WED</div>
+                        <div class="weekday">THU</div>
+                        <div class="weekday">FRI</div>
+                        <div class="weekday">SAT</div>
+
+                        <div class="day muted">26</div>
+                        <div class="day muted">27</div>
+                        <div class="day muted">28</div>
+                        <div class="day muted">29</div>
+                        <div class="day muted">30</div>
+                        <div class="day muted">31</div>
+
+                        <div class="day present-day">1</div>
+                        <div class="day present-day">2</div>
+                        <div class="day present-day">3</div>
+                        <div class="day present-day">4</div>
+                        <div class="day late-day">5</div>
+                        <div class="day present-day">6</div>
+                        <div class="day present-day">7</div>
+
+                        <div class="day present-day">8</div>
+                        <div class="day present-day">9</div>
+                        <div class="day present-day">10</div>
+                        <div class="day late-day">11</div>
+                        <div class="day present-day">12</div>
+                        <div class="day absent-day">13</div>
+                        <div class="day present-day">14</div>
+
+                        <div class="day present-day">15</div>
+                        <div class="day present-day">16</div>
+                        <div class="day present-day">17</div>
+                        <div class="day late-day">18</div>
+                        <div class="day present-day">19</div>
+                        <div class="day absent-day">20</div>
+                        <div class="day present-day">21</div>
+
+                        <div class="day present-day">22</div>
+                        <div class="day present-day">23</div>
+                        <div class="day present-day">24</div>
+                        <div class="day present-day">25</div>
+                        <div class="day present-day">26</div>
+                        <div class="day present-day">27</div>
+                        <div class="day present-day">28</div>
+
+                        <div class="day present-day">29</div>
+                        <div class="day present-day">30</div>
+                        <div class="day present-day">31</div>
+
+                    </div>
+
+                    <div class="legend">
+                        <span><i class="present-dot"></i> Present</span>
+                        <span><i class="absent-dot"></i> Absent</span>
+                        <span><i class="late-dot"></i> Late</span>
+                    </div>
+                </section>
+
+                <section class="log-card">
+                    <div class="section-heading">
+                        <div>
+                            <h2>Attendance Log</h2>
+                            <p>Recent records</p>
+                        </div>
+                    </div>
+
+                    <div class="log-list">
+
+                        <div class="log-item">
+                            <div>
+                                <strong>August 11</strong>
+                                <span>09:00 AM — 05:00 PM</span>
+                            </div>
+                            <span class="log-status present-status">Present</span>
+                        </div>
+
+                        <div class="log-item">
+                            <div>
+                                <strong>August 10</strong>
+                                <span>09:00 AM — 05:00 PM</span>
+                            </div>
+                            <span class="log-status present-status">Present</span>
+                        </div>
+
+                        <div class="log-item">
+                            <div>
+                                <strong>August 8</strong>
+                                <span>09:15 AM — 05:00 PM</span>
+                            </div>
+                            <span class="log-status late-status">Late</span>
+                        </div>
+
+                        <div class="log-item">
+                            <div>
+                                <strong>August 7</strong>
+                                <span>09:00 AM — 05:00 PM</span>
+                            </div>
+                            <span class="log-status present-status">Present</span>
+                        </div>
+
+                        <div class="log-item">
+                            <div>
+                                <strong>August 6</strong>
+                                <span>No attendance record</span>
+                            </div>
+                            <span class="log-status absent-status">Absent</span>
+                        </div>
+
+                    </div>
+                </section>
+
+            </div>
+
+        </section>
+
+    </main>
+</div>
+
+</body>
+</html>

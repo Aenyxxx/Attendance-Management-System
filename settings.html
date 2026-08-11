@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | BeigePay</title>
+    <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+
+<div class="app-layout">
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">B</div>
+            <div>
+                <h2>BeigePay</h2>
+                <span>Personal Finance</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <p class="nav-label">MAIN MENU</p>
+
+            <a href="dashboard.html" class="nav-link">
+                <span>📊</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="attendance.html" class="nav-link">
+                <span>📅</span>
+                <span>Attendance</span>
+            </a>
+
+            <a href="profile.html" class="nav-link">
+                <span>👤</span>
+                <span>Profile</span>
+            </a>
+
+            <a href="settings.html" class="nav-link active">
+                <span>⚙️</span>
+                <span>Settings</span>
+            </a>
+
+            <a href="files.html" class="nav-link">
+                <span>📁</span>
+                <span>Files</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-user">
+            <div class="user-avatar">JD</div>
+            <div class="user-info">
+                <strong>Jane Doe</strong>
+                <span>Administrator</span>
+            </div>
+            <span>•••</span>
+        </div>
+
+    </aside>
+
+    <main class="main-content">
+
+        <header class="top-header">
+            <div class="page-title">
+                <h1>Settings</h1>
+                <p>Customize your account and preferences.</p>
+            </div>
+
+            <div class="header-actions">
+                <div class="search-box">
+                    <span>⌕</span>
+                    <input type="search" placeholder="Search anything...">
+                </div>
+
+                <button class="notification-btn">🔔</button>
+                <div class="header-avatar">JD</div>
+            </div>
+        </header>
+
+        <section class="content">
+
+            <div class="settings-heading">
+                <h2>Preferences</h2>
+                <p>Manage your account settings and application preferences.</p>
+            </div>
+
+            <div class="settings-grid">
+
+                <section class="settings-card">
+
+                    <div class="card-heading">
+                        <div class="settings-icon">👤</div>
+                        <div>
+                            <h3>Account Settings</h3>
+                            <p>Basic account preferences.</p>
+                        </div>
+                    </div>
+
+                    <div class="settings-row">
+                        <div>
+                            <strong>Username</strong>
+                            <span>Manage your public username.</span>
+                        </div>
+                        <input class="small-input" type="text" value="janedoe">
+                    </div>
+
+                    <div class="settings-row">
+                        <div>
+                            <strong>Email Address</strong>
+                            <span>Your primary account email.</span>
+                        </div>
+                        <input class="small-input" type="email" value="jane@example.com">
+                    </div>
+
+                    <div class="settings-row">
+                        <div>
+                            <strong>Language</strong>
+                            <span>Select your preferred language.</span>
+                        </div>
+                        <select>
+                            <option>English</option>
+                            <option>Filipino</option>
+                        </select>
+                    </div>
+
+                </section>
+
+                <section class="settings-card">
+
+                    <div class="card-heading">
+                        <div class="settings-icon pink">🔔</div>
+                        <div>
+                            <h3>Notifications</h3>
+                            <p>Choose which alerts you receive.</p>
+                        </div>
+                    </div>
+
+                    <div class="settings-row">
+                        <div>
+                            <strong>Email Notifications</strong>
+                            <span>Receive updates through email.</span>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="settings-row">
+                        <div>
+                            <strong>Transaction Alerts</strong>
+                            <span>Get notified about transactions.</span>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="settings-row">
+                        <div>
+                            <strong>Weekly Summary</strong>
+                            <span>Receive your weekly finance report.</span>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                </section>
+
+                <section class="settings-card">
+
+                    <div class="card-heading">
+                        <div class="settings-icon">🔒</div>
+                        <div>
+                            <h3>Security</h3>
+                            <p>Protect your account.</p>
+                        </div>
+                    </div>
+
+                    <div class="security-item">
+                        <div>
+                            <strong>Password</strong>
+                            <span>Last changed 2 months ago.</span>
+                        </div>
+                        <button class="outline-btn">Change</button>
+                    </div>
+
+                    <div class="security-item">
+                        <div>
+                            <strong>Two-Factor Authentication</strong>
+                            <span>Add another layer of security.</span>
+                        </div>
+                        <button class="outline-btn">Enable</button>
+                    </div>
+
+                </section>
+
+                <section class="settings-card">
+
+                    <div class="card-heading">
+                        <div class="settings-icon">🎨</div>
+                        <div>
+                            <h3>Appearance</h3>
+                            <p>Customize how the app looks.</p>
+                        </div>
+                    </div>
+
+                    <div class="theme-selector">
+                        <label class="theme-option selected">
+                            <input type="radio" name="theme" checked>
+                            <span class="theme-preview light-preview"></span>
+                            <strong>Light</strong>
+                        </label>
+
+                        <label class="theme-option">
+                            <input type="radio" name="theme">
+                            <span class="theme-preview beige-preview"></span>
+                            <strong>Warm Beige</strong>
+                        </label>
+
+                        <label class="theme-option">
+                            <input type="radio" name="theme">
+                            <span class="theme-preview dark-preview"></span>
+                            <strong>Dark</strong>
+                        </label>
+                    </div>
+
+                </section>
+
+            </div>
+
+            <div class="settings-footer">
+                <button class="cancel-btn">Cancel</button>
+                <button class="save-btn">Save Changes</button>
+            </div>
+
+        </section>
+
+    </main>
+</div>
+
+</body>
+</html>

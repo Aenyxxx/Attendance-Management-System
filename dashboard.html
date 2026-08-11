@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Beige Finance</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<div class="app-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">B</div>
+            <div>
+                <h2>BeigePay</h2>
+                <span>Personal Finance</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <p class="nav-label">MAIN MENU</p>
+
+            <a href="dashboard.html" class="nav-link active">
+                <span>📊</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="attendance.html" class="nav-link">
+                <span>📅</span>
+                <span>Attendance</span>
+            </a>
+
+            <a href="profile.html" class="nav-link">
+                <span>👤</span>
+                <span>Profile</span>
+            </a>
+
+            <a href="settings.html" class="nav-link">
+                <span>⚙️</span>
+                <span>Settings</span>
+            </a>
+
+            <a href="files.html" class="nav-link">
+                <span>📁</span>
+                <span>Files</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-user">
+            <div class="user-avatar">JD</div>
+            <div class="user-info">
+                <strong>Jane Doe</strong>
+                <span>Administrator</span>
+            </div>
+            <span class="more-icon">•••</span>
+        </div>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="top-header">
+
+            <div class="page-title">
+                <span class="mobile-brand">B</span>
+                <div>
+                    <h1>Dashboard</h1>
+                    <p>Welcome back, Jane!</p>
+                </div>
+            </div>
+
+            <div class="header-actions">
+
+                <div class="search-box">
+                    <span>⌕</span>
+                    <input type="search" placeholder="Search anything...">
+                </div>
+
+                <button class="notification-btn" aria-label="Notifications">
+                    🔔
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="header-avatar">JD</div>
+
+            </div>
+
+        </header>
+
+        <section class="content">
+
+            <div class="welcome-row">
+                <div>
+                    <h2>Financial Overview</h2>
+                    <p>Here's what's happening with your finances.</p>
+                </div>
+
+                <button class="primary-btn">+ Add Transaction</button>
+            </div>
+
+            <!-- Financial Cards -->
+            <div class="summary-grid">
+
+                <article class="summary-card balance-card">
+                    <div class="card-top">
+                        <span>Total Balance</span>
+                        <span class="card-icon">💰</span>
+                    </div>
+
+                    <h3>$24,580.00</h3>
+
+                    <div class="card-footer">
+                        <span class="percentage positive">+12.5%</span>
+                        <span>vs last month</span>
+                    </div>
+                </article>
+
+                <article class="summary-card">
+                    <div class="card-top">
+                        <span>Monthly Income</span>
+                        <span class="card-icon pink-icon">↗</span>
+                    </div>
+
+                    <h3>$6,850.00</h3>
+
+                    <div class="card-footer">
+                        <span class="positive-text">+$850</span>
+                        <span>this month</span>
+                    </div>
+                </article>
+
+                <article class="summary-card">
+                    <div class="card-top">
+                        <span>Monthly Expenses</span>
+                        <span class="card-icon beige-icon">↘</span>
+                    </div>
+
+                    <h3>$3,420.00</h3>
+
+                    <div class="card-footer">
+                        <span class="negative-text">-$230</span>
+                        <span>vs last month</span>
+                    </div>
+                </article>
+
+                <article class="summary-card">
+                    <div class="card-top">
+                        <span>Savings Goal</span>
+                        <span class="card-icon">🎯</span>
+                    </div>
+
+                    <h3>$8,000 <small>/ $10,000</small></h3>
+
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 80%;"></div>
+                    </div>
+
+                    <div class="progress-label">
+                        <span>80% completed</span>
+                        <span>$2,000 left</span>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Transactions -->
+            <section class="transactions-card">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Recent Transactions</h2>
+                        <p>Your latest financial activities</p>
+                    </div>
+
+                    <a href="#" class="view-all">View all →</a>
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Description</th>
+                                <th>Category</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Aug 10, 2026</td>
+                                <td>
+                                    <div class="transaction-name">
+                                        <span class="transaction-icon">🛒</span>
+                                        Grocery Shopping
+                                    </div>
+                                </td>
+                                <td><span class="category">Food</span></td>
+                                <td class="expense">-$128.50</td>
+                                <td><span class="status completed">Completed</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Aug 09, 2026</td>
+                                <td>
+                                    <div class="transaction-name">
+                                        <span class="transaction-icon income-icon">💼</span>
+                                        Salary
+                                    </div>
+                                </td>
+                                <td><span class="category">Income</span></td>
+                                <td class="income">+$4,500.00</td>
+                                <td><span class="status completed">Completed</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Aug 08, 2026</td>
+                                <td>
+                                    <div class="transaction-name">
+                                        <span class="transaction-icon">🚕</span>
+                                        Transportation
+                                    </div>
+                                </td>
+                                <td><span class="category">Transport</span></td>
+                                <td class="expense">-$45.00</td>
+                                <td><span class="status completed">Completed</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Aug 07, 2026</td>
+                                <td>
+                                    <div class="transaction-name">
+                                        <span class="transaction-icon">🎬</span>
+                                        Movie Night
+                                    </div>
+                                </td>
+                                <td><span class="category">Entertainment</span></td>
+                                <td class="expense">-$65.00</td>
+                                <td><span class="status pending">Pending</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Aug 05, 2026</td>
+                                <td>
+                                    <div class="transaction-name">
+                                        <span class="transaction-icon income-icon">💵</span>
+                                        Freelance Payment
+                                    </div>
+                                </td>
+                                <td><span class="category">Income</span></td>
+                                <td class="income">+$750.00</td>
+                                <td><span class="status completed">Completed</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+</div>
+
+</body>
+</html>

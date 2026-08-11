@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | BeigePay</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+
+<div class="app-layout">
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">B</div>
+            <div>
+                <h2>BeigePay</h2>
+                <span>Personal Finance</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <p class="nav-label">MAIN MENU</p>
+
+            <a href="dashboard.html" class="nav-link">
+                <span>📊</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="attendance.html" class="nav-link">
+                <span>📅</span>
+                <span>Attendance</span>
+            </a>
+
+            <a href="profile.html" class="nav-link active">
+                <span>👤</span>
+                <span>Profile</span>
+            </a>
+
+            <a href="settings.html" class="nav-link">
+                <span>⚙️</span>
+                <span>Settings</span>
+            </a>
+
+            <a href="files.html" class="nav-link">
+                <span>📁</span>
+                <span>Files</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-user">
+            <div class="user-avatar">JD</div>
+            <div class="user-info">
+                <strong>Jane Doe</strong>
+                <span>Administrator</span>
+            </div>
+            <span>•••</span>
+        </div>
+
+    </aside>
+
+    <main class="main-content">
+
+        <header class="top-header">
+            <div class="page-title">
+                <div>
+                    <h1>Profile</h1>
+                    <p>Manage your personal information.</p>
+                </div>
+            </div>
+
+            <div class="header-actions">
+                <div class="search-box">
+                    <span>⌕</span>
+                    <input type="search" placeholder="Search anything...">
+                </div>
+
+                <button class="notification-btn">🔔</button>
+                <div class="header-avatar">JD</div>
+            </div>
+        </header>
+
+        <section class="content">
+
+            <div class="profile-card">
+
+                <div class="profile-cover"></div>
+
+                <div class="profile-main">
+
+                    <div class="profile-picture-wrapper">
+                        <div class="profile-picture">JD</div>
+                        <button class="camera-btn">📷</button>
+                    </div>
+
+                    <div class="profile-heading">
+                        <h2>Jane Doe</h2>
+                        <p>Administrator</p>
+                        <span class="member-badge">Active Member</span>
+                    </div>
+
+                    <button class="edit-profile">Edit Profile</button>
+
+                </div>
+
+            </div>
+
+            <form class="profile-form">
+
+                <div class="form-section">
+
+                    <div class="section-title">
+                        <h2>Personal Information</h2>
+                        <p>Update your personal details and contact information.</p>
+                    </div>
+
+                    <div class="form-grid">
+
+                        <div class="field">
+                            <label for="first-name">First Name</label>
+                            <input id="first-name" type="text" value="Jane">
+                        </div>
+
+                        <div class="field">
+                            <label for="last-name">Last Name</label>
+                            <input id="last-name" type="text" value="Doe">
+                        </div>
+
+                        <div class="field">
+                            <label for="email">Email Address</label>
+                            <input id="email" type="email" value="jane.doe@example.com">
+                        </div>
+
+                        <div class="field">
+                            <label for="phone">Phone Number</label>
+                            <input id="phone" type="tel" value="+63 912 345 6789">
+                        </div>
+
+                        <div class="field full">
+                            <label for="address">Address</label>
+                            <input id="address" type="text" value="Manila, Philippines">
+                        </div>
+
+                        <div class="field full">
+                            <label for="bio">Bio</label>
+                            <textarea id="bio" rows="5">Finance enthusiast who enjoys managing personal finances, setting savings goals, and keeping everything organized.</textarea>
+                        </div>
+
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="cancel-btn">Cancel</button>
+                        <button type="submit" class="save-btn">Save Changes</button>
+                    </div>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+</div>
+
+</body>
+</html>
