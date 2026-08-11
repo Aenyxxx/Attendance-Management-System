@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | Beige Finance</title>
     <link rel="stylesheet" href="dashboard.css">
 </head>
+
 <body>
 
 <div class="app-layout">
@@ -15,18 +17,26 @@
 
         <div class="brand">
             <div class="brand-icon">B</div>
+
             <div>
                 <h2>BeigePay</h2>
                 <span>Personal Finance</span>
             </div>
         </div>
 
+
         <nav class="sidebar-nav">
+
             <p class="nav-label">MAIN MENU</p>
 
             <a href="dashboard.html" class="nav-link active">
                 <span>📊</span>
                 <span>Dashboard</span>
+            </a>
+
+            <a href="goals.html" class="nav-link">
+                <span>🎯</span>
+                <span>Goals</span>
             </a>
 
             <a href="attendance.html" class="nav-link">
@@ -48,18 +58,27 @@
                 <span>📁</span>
                 <span>Files</span>
             </a>
+
         </nav>
 
+
         <div class="sidebar-user">
-            <div class="user-avatar">JD</div>
+
+            <div class="user-avatar">
+                JD
+            </div>
+
             <div class="user-info">
                 <strong>Jane Doe</strong>
                 <span>Administrator</span>
             </div>
+
             <span class="more-icon">•••</span>
+
         </div>
 
     </aside>
+
 
     <!-- Main Content -->
     <main class="main-content">
@@ -68,127 +87,165 @@
         <header class="top-header">
 
             <div class="page-title">
-                <span class="mobile-brand">B</span>
+
+                <span class="mobile-brand">
+                    B
+                </span>
+
                 <div>
                     <h1>Dashboard</h1>
                     <p>Welcome back, Jane!</p>
                 </div>
+
             </div>
+
 
             <div class="header-actions">
 
                 <div class="search-box">
                     <span>⌕</span>
-                    <input type="search" placeholder="Search anything...">
+                    <input
+                        type="search"
+                        placeholder="Search anything..."
+                    >
                 </div>
 
-                <button class="notification-btn" aria-label="Notifications">
+
+                <button
+                    class="notification-btn"
+                    aria-label="Notifications"
+                >
                     🔔
                     <span class="notification-dot"></span>
                 </button>
 
-                <div class="header-avatar">JD</div>
+
+                <div class="header-avatar">
+                    JD
+                </div>
 
             </div>
 
         </header>
 
+
         <section class="content">
 
             <div class="welcome-row">
+
                 <div>
                     <h2>Financial Overview</h2>
                     <p>Here's what's happening with your finances.</p>
                 </div>
 
-                <button class="primary-btn">+ Add Transaction</button>
+                <button class="primary-btn" id="add-transaction-btn" type="button">
+                    + Add Transaction
+                </button>
+
             </div>
 
             <!-- Financial Cards -->
             <div class="summary-grid">
 
+                <!-- Total Balance -->
                 <article class="summary-card balance-card">
+
                     <div class="card-top">
                         <span>Total Balance</span>
-                        <span class="card-icon">💰</span>
+
+                        <span class="card-icon">
+                            💰
+                        </span>
                     </div>
 
-                    <h3>$50,580.00</h3>
+                    <h3 id="total-balance"></h3>
 
                     <div class="card-footer">
-                        <span class="percentage positive">+12.5%</span>
-                        <span>vs last month</span>
+                        <span class="percentage positive">
+                            +12.5%
+                        </span>
+
+                        <span>
+                            vs last month
+                        </span>
                     </div>
+
                 </article>
 
+
+                <!-- Monthly Income -->
                 <article class="summary-card">
+
                     <div class="card-top">
                         <span>Monthly Income</span>
-                        <span class="card-icon pink-icon">↗</span>
+
+                        <span class="card-icon">
+                            🤑
+                        </span>
                     </div>
 
-                    <h3>$6,850.00</h3>
+                    <h3 id="monthly-income"></h3>
 
                     <div class="card-footer">
-                        <span class="positive-text">+$850</span>
-                        <span>this month</span>
+                        <span class="positive-text">
+                            +$850
+                        </span>
+
+                        <span>
+                            this month
+                        </span>
                     </div>
+
                 </article>
 
+
+                <!-- Monthly Expenses -->
                 <article class="summary-card">
+
                     <div class="card-top">
                         <span>Monthly Expenses</span>
-                        <span class="card-icon beige-icon">↘</span>
+
+                        <span class="card-icon">
+                            💸
+                        </span>
                     </div>
 
-                    <h3>$3,420.00</h3>
+                    <h3 id = "monthly-expenses"></h3>
 
                     <div class="card-footer">
-                        <span class="negative-text">-$230</span>
-                        <span>vs last month</span>
+                        <span class="negative-text">
+                            -$230
+                        </span>
+
+                        <span>
+                            vs last month
+                        </span>
                     </div>
+
                 </article>
 
-                <article class="summary-card goals-card">
+
+                <!-- Net Savings -->
+                <article class="summary-card">
 
                     <div class="card-top">
-                        <span>Financial Goals</span>
+                        <span>Net Savings</span>
 
-                        <button class="add-goal-btn" type="button">
-                            + Add Goal
-                        </button>
+                        <span class="card-icon">
+                            💵
+                        </span>
                     </div>
 
-                    <!-- Goal Dropdown -->
-                    <div class="goal-selector">
-                        <label for="goal-select">Current Goal</label>
+                    <h3 id="net-savings"></h3>
 
-                        <select id="goal-select">
-                            <option>📱 IPHONE</option>
-                            <option>✈️ Travel Fund</option>
-                            <option>🚗 Car Fund</option>
-                            <option>💻 New Laptop</option>
-                            <option>🎓 Education</option>
-                        </select>
-                    </div>
+                    <div class="card-footer">
+                        <span class="positive-text">
+                            +18.4%
+                        </span>
 
-                    <!-- Selected Goal -->
-                    <div class="selected-goal">
-
-                        <div class="goal-amount">
-                            <h3>$8,000 <small>/ $10,000</small></h3>
-                            <span class="goal-percentage">10%</span>
-                        </div>
-
-                        <div class="goal-progress">
-                            <div class="goal-progress-bar" style="width: 10%;"></div>
-                        </div>
-
-                        <div class="goal-footer">
-                            <span>10% completed</span>
-                            <span>$2,000 left</span>
-                        </div>
-
+                        <span>
+                            vs last month
+                        </span>
                     </div>
 
                 </article>
@@ -199,17 +256,25 @@
             <section class="transactions-card">
 
                 <div class="section-heading">
+
                     <div>
                         <h2>Recent Transactions</h2>
                         <p>Your latest financial activities</p>
                     </div>
 
-                    <a href="#" class="view-all">View all →</a>
+                    <a href="#" class="view-all">
+                        View all →
+                    </a>
+
                 </div>
 
+
                 <div class="table-wrapper">
+
                     <table>
+
                         <thead>
+
                             <tr>
                                 <th>Date</th>
                                 <th>Description</th>
@@ -217,83 +282,309 @@
                                 <th>Amount</th>
                                 <th>Status</th>
                             </tr>
+
                         </thead>
 
-                        <tbody>
+
+                        <tbody id="transactions-body">
+
                             <tr>
-                                <td>Aug 10, 2026</td>
+
+                                <td>
+                                    Aug 10, 2026
+                                </td>
+
                                 <td>
                                     <div class="transaction-name">
-                                        <span class="transaction-icon">🛒</span>
+                                        <span class="transaction-icon">
+                                            🛒
+                                        </span>
+
                                         Grocery Shopping
                                     </div>
                                 </td>
-                                <td><span class="category">Food</span></td>
-                                <td class="expense">-$128.50</td>
-                                <td><span class="status completed">Completed</span></td>
+
+                                <td>
+                                    <span class="category">
+                                        Food
+                                    </span>
+                                </td>
+
+                                <td class="expense">
+                                    -$128.50
+                                </td>
+
+                                <td>
+                                    <span class="status completed">
+                                        Completed
+                                    </span>
+                                </td>
+
                             </tr>
 
+
                             <tr>
-                                <td>Aug 09, 2026</td>
+
+                                <td>
+                                    Aug 09, 2026
+                                </td>
+
                                 <td>
                                     <div class="transaction-name">
-                                        <span class="transaction-icon income-icon">💼</span>
+                                        <span class="transaction-icon income-icon">
+                                            💼
+                                        </span>
+
                                         Salary
                                     </div>
                                 </td>
-                                <td><span class="category">Income</span></td>
-                                <td class="income">+$4,500.00</td>
-                                <td><span class="status completed">Completed</span></td>
+
+                                <td>
+                                    <span class="category">
+                                        Income
+                                    </span>
+                                </td>
+
+                                <td class="income">
+                                    +$4,500.00
+                                </td>
+
+                                <td>
+                                    <span class="status completed">
+                                        Completed
+                                    </span>
+                                </td>
+
                             </tr>
 
+
                             <tr>
-                                <td>Aug 08, 2026</td>
+
+                                <td>
+                                    Aug 08, 2026
+                                </td>
+
                                 <td>
                                     <div class="transaction-name">
-                                        <span class="transaction-icon">🚕</span>
+                                        <span class="transaction-icon">
+                                            🚕
+                                        </span>
+
                                         Transportation
                                     </div>
                                 </td>
-                                <td><span class="category">Transport</span></td>
-                                <td class="expense">-$45.00</td>
-                                <td><span class="status completed">Completed</span></td>
+
+                                <td>
+                                    <span class="category">
+                                        Transport
+                                    </span>
+                                </td>
+
+                                <td class="expense">
+                                    -$45.00
+                                </td>
+
+                                <td>
+                                    <span class="status completed">
+                                        Completed
+                                    </span>
+                                </td>
+
                             </tr>
 
+
                             <tr>
-                                <td>Aug 07, 2026</td>
+
+                                <td>
+                                    Aug 07, 2026
+                                </td>
+
                                 <td>
                                     <div class="transaction-name">
-                                        <span class="transaction-icon">🎬</span>
+                                        <span class="transaction-icon">
+                                            🎬
+                                        </span>
+
                                         Movie Night
                                     </div>
                                 </td>
-                                <td><span class="category">Entertainment</span></td>
-                                <td class="expense">-$65.00</td>
-                                <td><span class="status pending">Pending</span></td>
+
+                                <td>
+                                    <span class="category">
+                                        Entertainment
+                                    </span>
+                                </td>
+
+                                <td class="expense">
+                                    -$65.00
+                                </td>
+
+                                <td>
+                                    <span class="status pending">
+                                        Pending
+                                    </span>
+                                </td>
+
                             </tr>
 
+
                             <tr>
-                                <td>Aug 05, 2026</td>
+
+                                <td>
+                                    Aug 05, 2026
+                                </td>
+
                                 <td>
                                     <div class="transaction-name">
-                                        <span class="transaction-icon income-icon">💵</span>
+                                        <span class="transaction-icon income-icon">
+                                            💵
+                                        </span>
+
                                         Freelance Payment
                                     </div>
                                 </td>
-                                <td><span class="category">Income</span></td>
-                                <td class="income">+$750.00</td>
-                                <td><span class="status completed">Completed</span></td>
+
+                                <td>
+                                    <span class="category">
+                                        Income
+                                    </span>
+                                </td>
+
+                                <td class="income">
+                                    +$750.00
+                                </td>
+
+                                <td>
+                                    <span class="status completed">
+                                        Completed
+                                    </span>
+                                </td>
+
                             </tr>
+
                         </tbody>
+
                     </table>
+
                 </div>
 
             </section>
 
         </section>
 
-    </main>
-</div>
+        <div class="modal-overlay" id="transaction-modal">
+            <div class="modal">
 
+                <div class="modal-header">
+                    <div>
+                        <h2>Add Transaction</h2>
+                        <p>Record a new financial activity.</p>
+                    </div>
+
+                    <button
+                        class="modal-close"
+                        id="close-transaction-modal"
+                        type="button"
+                        aria-label="Close">
+                        ×
+                    </button>
+                </div>
+
+                <form id="transaction-form">
+
+                    <div class="form-group">
+                        <label for="transaction-description">
+                            Description
+                        </label>
+
+                        <input
+                            type="text"
+                            id="transaction-description"
+                            placeholder="e.g. Grocery Shopping"
+                            required>
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="transaction-amount">
+                                Amount
+                            </label>
+
+                            <input
+                                type="number"
+                                id="transaction-amount"
+                                placeholder="0.00"
+                                min="0"
+                                step="0.01"
+                                required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="transaction-type">
+                                Type
+                            </label>
+
+                            <select id="transaction-type" required>
+                                <option value="expense">Expense</option>
+                                <option value="income">Income</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="transaction-category">
+                            Category
+                        </label>
+
+                        <select id="transaction-category" required>
+                            <option value="Food">Food</option>
+                            <option value="Transport">Transport</option>
+                            <option value="Entertainment">
+                                Entertainment
+                            </option>
+                            <option value="Bills">Bills</option>
+                            <option value="Shopping">Shopping</option>
+                            <option value="Income">Income</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="transaction-date">
+                            Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="transaction-date"
+                            required>
+                    </div>
+
+                    <div class="modal-actions">
+                        <button
+                            class="secondary-btn"
+                            id="cancel-transaction"
+                            type="button">
+                            Cancel
+                        </button>
+
+                        <button
+                            class="primary-btn"
+                            type="submit">
+                            Add Transaction
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+    </main>
+
+</div>
+<script src="dashboard.js"></script>
 </body>
 </html>
