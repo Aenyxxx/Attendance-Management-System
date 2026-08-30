@@ -27,7 +27,8 @@ try:
     FROM public.transaction
     JOIN public.categories
         ON public.transaction.category_id = public.categories.id
-    WHERE public.transaction.status = 'Completed';
+    ORDER BY public.transaction.amount DESC
+    LIMIT 5;
     """)
     transactions = cursor.fetchall()
 
