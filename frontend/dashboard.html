@@ -1,280 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MONAEY</title>
+    <title>MONAEY — Dashboard</title>
     <link rel="stylesheet" href="dashboard.css">
 </head>
 
 <body>
-
 <div class="app-layout">
 
-    <!-- Sidebar -->
     <aside class="sidebar">
-
         <div class="brand">
             <div class="brand-icon">B</div>
-
             <div>
                 <h2>AJ</h2>
                 <span>Personal Money Tracker</span>
             </div>
         </div>
 
-
         <nav class="sidebar-nav">
-
             <p class="nav-label">MAIN MENU</p>
-
-            <a href="dashboard.html" class="nav-link active">
-                <span>📊</span>
-                <span>Dashboard</span>
-            </a>
-
-            <a href="goals.html" class="nav-link">
-                <span>🎯</span>
-                <span>Goals</span>
-            </a>
-
-            <a href="attendance.html" class="nav-link">
-                <span>📅</span>
-                <span>Attendance</span>
-            </a>
-
-            <a href="profile.html" class="nav-link">
-                <span>👤</span>
-                <span>Profile</span>
-            </a>
-
-            <a href="settings.html" class="nav-link">
-                <span>⚙️</span>
-                <span>Settings</span>
-            </a>
-
-            <a href="files.html" class="nav-link">
-                <span>📁</span>
-                <span>Files</span>
-            </a>
-
+            <a href="dashboard.html" class="nav-link active"><span>📊</span><span>Dashboard</span></a>
+            <a href="goals.html" class="nav-link"><span>🎯</span><span>Goals</span></a>
+            <a href="attendance.html" class="nav-link"><span>📅</span><span>Attendance</span></a>
+            <a href="profile.html" class="nav-link"><span>👤</span><span>Profile</span></a>
+            <a href="settings.html" class="nav-link"><span>⚙️</span><span>Settings</span></a>
+            <a href="files.html" class="nav-link"><span>📁</span><span>Files</span></a>
         </nav>
 
-
         <div class="sidebar-user">
-
-            <div class="user-avatar">
-                JD
-            </div>
-
+            <div class="user-avatar">JD</div>
             <div class="user-info">
                 <strong>Jane Doe</strong>
                 <span>Administrator</span>
             </div>
-
             <span class="more-icon">•••</span>
-
         </div>
-
     </aside>
 
-
-    <!-- Main Content -->
     <main class="main-content">
-
-        <!-- Header -->
         <header class="top-header">
-
             <div class="page-title">
-
-                <span class="mobile-brand">
-                    B
-                </span>
-
+                <span class="mobile-brand">B</span>
                 <div>
                     <h1>Dashboard</h1>
                     <p>Welcome back, Jane!</p>
                 </div>
-
             </div>
 
-
             <div class="header-actions">
-
                 <div class="search-box">
                     <span>⌕</span>
-                    <input
-                        type="search"
-                        placeholder="Search anything..."
-                    >
+                    <input id="search-input" type="search" placeholder="Search transactions...">
                 </div>
-
-
-                <button
-                    class="notification-btn"
-                    aria-label="Notifications"
-                >
+                <button class="notification-btn" aria-label="Notifications">
                     🔔
                     <span class="notification-dot"></span>
                 </button>
-
-
-                <div class="header-avatar">
-                    JD
-                </div>
-
+                <div class="header-avatar">JD</div>
             </div>
-
         </header>
-
 
         <section class="content">
 
+            <!-- Month controls -->
             <div class="welcome-row">
-
                 <div>
                     <h2>Financial Overview</h2>
-                    <p>Here's what's happening with your finances.</p>
+                    <p id="month-description">Monthly financial statement</p>
                 </div>
 
-                <button class="primary-btn" id="add-transaction-btn" type="button">
-                    + Add Transaction
-                </button>
-
+                <div class="month-controls">
+                    <button class="month-arrow" id="previous-month" type="button" aria-label="Previous month">‹</button>
+                    <label class="month-select-wrap">
+                        <span>MONTH</span>
+                        <select id="month-select" aria-label="Select month"></select>
+                    </label>
+                    <button class="month-arrow" id="next-month" type="button" aria-label="Next month">›</button>
+                    <button class="primary-btn" id="add-transaction-btn" type="button">+ Add Transaction</button>
+                </div>
             </div>
 
-            <!-- Financial Cards -->
-            <div class="summary-grid">
+            <!-- Excel-style monthly statement -->
+            <section class="statement-card">
+                <div class="statement-title">
+                    <div>
+                        <span class="eyebrow">MONTHLY STATEMENT</span>
+                        <h2 id="statement-month">AUGUST</h2>
+                    </div>
+                    <span class="statement-year" id="statement-year">2026</span>
+                </div>
 
-                <!-- Total Balance -->
-                <article class="summary-card balance-card">
+                <div class="statement-grid">
+                    <article class="statement-cell income-cell">
+                        <span>INCOME</span>
+                        <strong id="statement-income">₱0.00</strong>
+                    </article>
+                    <article class="statement-cell balance-cell">
+                        <span>BALANCE</span>
+                        <strong id="statement-balance">₱0.00</strong>
+                    </article>
+                    <article class="statement-cell">
+                        <span>TO PAY</span>
+                        <strong id="statement-to-pay">₱0.00</strong>
+                    </article>
+                    <article class="statement-cell">
+                        <span>SPENDS</span>
+                        <strong id="statement-spends">₱0.00</strong>
+                    </article>
+                </div>
+            </section>
 
-                    <div class="card-top">
-                        <span>Total Balance</span>
-
-                        <span class="card-icon">
-                            💰
-                        </span>
+            <!-- Excel-style expenses and bank transfers -->
+            <div class="ledger-grid">
+                <section class="ledger-card">
+                    <div class="ledger-heading">
+                        <div>
+                            <span class="eyebrow">EXPENSES</span>
+                            <h2>Bills</h2>
+                        </div>
+                        <span class="ledger-total" id="expense-total">₱0.00</span>
                     </div>
 
-                    <h3 id="total-balance"></h3>
+                    <div class="ledger-table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>BILLS</th>
+                                    <th>AMOUNT</th>
+                                </tr>
+                            </thead>
+                            <tbody id="expenses-body"></tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>TOTAL</th>
+                                    <th id="expenses-footer-total">₱0.00</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </section>
 
-                    <div class="card-footer">
-                        <span class="percentage positive">
-                            +12.5%
-                        </span>
-
-                        <span>
-                            vs last month
-                        </span>
+                <section class="ledger-card">
+                    <div class="ledger-heading">
+                        <div>
+                            <span class="eyebrow">BANK TRANSFER</span>
+                            <h2 id="transfer-month">AUGUST</h2>
+                        </div>
+                        <span class="ledger-total" id="transfer-total">₱0.00</span>
                     </div>
 
-                </article>
-
-
-                <!-- Monthly Income -->
-                <article class="summary-card">
-
-                    <div class="card-top">
-                        <span>Monthly Income</span>
-
-                        <span class="card-icon">
-                            🤑
-                        </span>
+                    <div class="ledger-table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>BANK NAME</th>
+                                    <th>AMOUNT</th>
+                                </tr>
+                            </thead>
+                            <tbody id="transfers-body"></tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>TOTAL</th>
+                                    <th id="transfers-footer-total">₱0.00</th>
+                                </tr>
+                            </tfoot>
+                        </table>
                     </div>
-
-                    <h3 id="monthly-income"></h3>
-
-                    <div class="card-footer">
-                        <span class="positive-text">
-                            +$850
-                        </span>
-
-                        <span>
-                            this month
-                        </span>
-                    </div>
-
-                </article>
-
-
-                <!-- Monthly Expenses -->
-                <article class="summary-card">
-
-                    <div class="card-top">
-                        <span>Monthly Expenses</span>
-
-                        <span class="card-icon">
-                            💸
-                        </span>
-                    </div>
-
-                    <h3 id = "monthly-expenses"></h3>
-
-                    <div class="card-footer">
-                        <span class="negative-text">
-                            -$230
-                        </span>
-
-                        <span>
-                            vs last month
-                        </span>
-                    </div>
-
-                </article>
-
-
-                <!-- Net Savings -->
-                <article class="summary-card">
-
-                    <div class="card-top">
-                        <span>Net Savings</span>
-
-                        <span class="card-icon">
-                            💵
-                        </span>
-                    </div>
-
-                    <h3 id="net-savings"></h3>
-
-                    <div class="card-footer">
-                        <span class="positive-text">
-                            +18.4%
-                        </span>
-
-                        <span>
-                            vs last month
-                        </span>
-                    </div>
-
-                </article>
-
+                </section>
             </div>
+
+            <section class="total-balance-panel">
+                <span>TOTAL BALANCE</span>
+                <strong id="total-balance">₱0.00</strong>
+            </section>
 
             <!-- Transactions -->
             <section class="transactions-card">
-
                 <div class="section-heading">
-
                     <div>
                         <h2>Recent Transactions</h2>
-                        <p>Your latest financial activities</p>
+                        <p id="transaction-count">Latest financial activities</p>
                     </div>
-
-                    <a href="#" class="view-all">
-                        View all →
-                    </a>
-
+                    <button class="view-all" id="clear-search" type="button">Clear search</button>
                 </div>
 
-
                 <div class="table-wrapper">
-
                     <table>
-
                         <thead>
-
                             <tr>
                                 <th>Date</th>
                                 <th>Description</th>
@@ -282,268 +196,52 @@
                                 <th>Amount</th>
                                 <th>Status</th>
                             </tr>
-
                         </thead>
-
-
-                        <tbody id="transactions-body">
-
-                            <tr>
-
-                                <td>
-                                    Aug 10, 2026
-                                </td>
-
-                                <td>
-                                    <div class="transaction-name">
-                                        <span class="transaction-icon">
-                                            🛒
-                                        </span>
-
-                                        Grocery Shopping
-                                    </div>
-                                </td>
-
-                                <td>
-                                    <span class="category">
-                                        Food
-                                    </span>
-                                </td>
-
-                                <td class="expense">
-                                    -$128.50
-                                </td>
-
-                                <td>
-                                    <span class="status completed">
-                                        Completed
-                                    </span>
-                                </td>
-
-                            </tr>
-
-
-                            <tr>
-
-                                <td>
-                                    Aug 09, 2026
-                                </td>
-
-                                <td>
-                                    <div class="transaction-name">
-                                        <span class="transaction-icon income-icon">
-                                            💼
-                                        </span>
-
-                                        Salary
-                                    </div>
-                                </td>
-
-                                <td>
-                                    <span class="category">
-                                        Income
-                                    </span>
-                                </td>
-
-                                <td class="income">
-                                    +$4,500.00
-                                </td>
-
-                                <td>
-                                    <span class="status completed">
-                                        Completed
-                                    </span>
-                                </td>
-
-                            </tr>
-
-
-                            <tr>
-
-                                <td>
-                                    Aug 08, 2026
-                                </td>
-
-                                <td>
-                                    <div class="transaction-name">
-                                        <span class="transaction-icon">
-                                            🚕
-                                        </span>
-
-                                        Transportation
-                                    </div>
-                                </td>
-
-                                <td>
-                                    <span class="category">
-                                        Transport
-                                    </span>
-                                </td>
-
-                                <td class="expense">
-                                    -$45.00
-                                </td>
-
-                                <td>
-                                    <span class="status completed">
-                                        Completed
-                                    </span>
-                                </td>
-
-                            </tr>
-
-
-                            <tr>
-
-                                <td>
-                                    Aug 07, 2026
-                                </td>
-
-                                <td>
-                                    <div class="transaction-name">
-                                        <span class="transaction-icon">
-                                            🎬
-                                        </span>
-
-                                        Movie Night
-                                    </div>
-                                </td>
-
-                                <td>
-                                    <span class="category">
-                                        Entertainment
-                                    </span>
-                                </td>
-
-                                <td class="expense">
-                                    -$65.00
-                                </td>
-
-                                <td>
-                                    <span class="status pending">
-                                        Pending
-                                    </span>
-                                </td>
-
-                            </tr>
-
-
-                            <tr>
-
-                                <td>
-                                    Aug 05, 2026
-                                </td>
-
-                                <td>
-                                    <div class="transaction-name">
-                                        <span class="transaction-icon income-icon">
-                                            💵
-                                        </span>
-
-                                        Freelance Payment
-                                    </div>
-                                </td>
-
-                                <td>
-                                    <span class="category">
-                                        Income
-                                    </span>
-                                </td>
-
-                                <td class="income">
-                                    +$750.00
-                                </td>
-
-                                <td>
-                                    <span class="status completed">
-                                        Completed
-                                    </span>
-                                </td>
-
-                            </tr>
-
-                        </tbody>
-
+                        <tbody id="transactions-body"></tbody>
                     </table>
-
+                    <div class="empty-state" id="empty-transactions">No transactions for this month.</div>
                 </div>
-
             </section>
-
         </section>
 
+        <!-- Add transaction modal -->
         <div class="modal-overlay" id="transaction-modal">
             <div class="modal">
-
                 <div class="modal-header">
                     <div>
                         <h2>Add Transaction</h2>
-                        <p>Record a new financial activity.</p>
+                        <p>Add it directly to the selected month.</p>
                     </div>
-
-                    <button
-                        class="modal-close"
-                        id="close-transaction-modal"
-                        type="button"
-                        aria-label="Close">
-                        ×
-                    </button>
+                    <button class="modal-close" id="close-transaction-modal" type="button" aria-label="Close">×</button>
                 </div>
 
                 <form id="transaction-form">
-
                     <div class="form-group">
-                        <label for="transaction-description">
-                            Description
-                        </label>
-
-                        <input
-                            type="text"
-                            id="transaction-description"
-                            placeholder="e.g. Grocery Shopping"
-                            required>
+                        <label for="transaction-description">Description</label>
+                        <input type="text" id="transaction-description" placeholder="e.g. Grocery Shopping" required>
                     </div>
 
                     <div class="form-row">
-
                         <div class="form-group">
-                            <label for="transaction-amount">
-                                Amount
-                            </label>
-
-                            <input
-                                type="number"
-                                id="transaction-amount"
-                                placeholder="0.00"
-                                min="0"
-                                step="0.01"
-                                required>
+                            <label for="transaction-amount">Amount</label>
+                            <input type="number" id="transaction-amount" placeholder="0.00" min="0" step="0.01" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="transaction-type">
-                                Type
-                            </label>
-
+                            <label for="transaction-type">Type</label>
                             <select id="transaction-type" required>
                                 <option value="expense">Expense</option>
                                 <option value="income">Income</option>
                             </select>
                         </div>
-
                     </div>
 
                     <div class="form-group">
-                        <label for="transaction-category">
-                            Category
-                        </label>
-
+                        <label for="transaction-category">Category</label>
                         <select id="transaction-category" required>
                             <option value="Food">Food</option>
                             <option value="Transport">Transport</option>
-                            <option value="Entertainment">
-                                Entertainment
-                            </option>
+                            <option value="Entertainment">Entertainment</option>
                             <option value="Bills">Bills</option>
                             <option value="Shopping">Shopping</option>
                             <option value="Income">Income</option>
@@ -552,39 +250,20 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="transaction-date">
-                            Date
-                        </label>
-
-                        <input
-                            type="date"
-                            id="transaction-date"
-                            required>
+                        <label for="transaction-date">Date</label>
+                        <input type="date" id="transaction-date" required>
                     </div>
 
                     <div class="modal-actions">
-                        <button
-                            class="secondary-btn"
-                            id="cancel-transaction"
-                            type="button">
-                            Cancel
-                        </button>
-
-                        <button
-                            class="primary-btn"
-                            type="submit">
-                            Add Transaction
-                        </button>
+                        <button class="secondary-btn" id="cancel-transaction" type="button">Cancel</button>
+                        <button class="primary-btn" type="submit">Add Transaction</button>
                     </div>
-
                 </form>
-
             </div>
         </div>
-
     </main>
-
 </div>
+
 <script src="dashboard.js"></script>
 </body>
 </html>
