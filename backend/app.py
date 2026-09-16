@@ -2,54 +2,13 @@ from flask import Flask, jsonify
 import os
 import psycopg
 from dotenv import load_dotenv
+from queries import get_categories
+from queries import get_transactions
 
 load_dotenv()
 
 app = Flask(__name__)
-
-import os
-
-import psycopg
-from dotenv import load_dotenv
-
-load_dotenv()
-
-try:
-    connection = psycopg.connect(
-        host=os.getenv("DB_HOST"),
-        port=os.getenv("DB_PORT"),
-        dbname=os.getenv("DB_NAME"),
-        user=os.getenv("DB_USER"),
-        password=os.getenv("DB_PASSWORD"),
-    )
-
-    print("Database connection successful!")
-
-    cursor = connection.cursor()
-
-    cursor.execute("""
-    SELECT
-        public.transaction.id,
-        public.transaction.description,
-        public.transaction.amount,
-        public.categories.name
-    FROM public.transaction
-    JOIN public.categories
-        ON public.transaction.category_id = public.categories.id
-    ORDER BY public.transaction.amount DESC
-    LIMIT 5;
-    """)
-    transactions = cursor.fetchall()
-
-    print("Tables in the public schema:")
-    for transac in transactions:
-        print(transac)
-
-    cursor.close()
-    connection.close()
-except Exception as error:
-    print("Database connection failed!")
-    print(error)
+app.json.sort_keys = False
 
 @app.route("/")
 def home():
@@ -60,6 +19,37 @@ def api_test():
     return jsonify ({
         "message": "API is working"
     })
+
+@app.route("/api/categories")
+def categories():
+    rows = get_categories()
+    categories = []
+
+    for row in rows:
+        category = {
+            "id":row[0],
+            "name":row[1]
+        }
+
+        categories.append(category)
+    return jsonify(categories)
+
+@app.route("/api/transaction")
+def transactions():
+    rows = get_transactions()
+
+    transactions = []
+
+    for tran in rows:
+        transac = {
+            "id":tran[0],
+            "description":tran[1],
+            "amount":tran[2],
+            "transaction_type":tran[3],
+            "status":tran[4]
+        }
+        transactions.append(transac)
+    return jsonify(transactions)
 
 if __name__ == "__main__":
     app.run(debug=True)
